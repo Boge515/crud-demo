@@ -35,7 +35,7 @@ public class UserService {
 
     //根据名字模糊查询
     public Page<User> findPage(Integer pageNum,Integer pageSize,String name) {
-        Sort sort = Sort.by(Sort.Direction.DESC, "creat_time");//根据创建时间降序排序
+        Sort sort = Sort.by(Sort.Direction.DESC, "create_time");//根据创建时间降序排序
         PageRequest request = PageRequest.of(pageNum-1, pageSize,sort);//分页查询
         return userDao.findNameLike(name,request);
     }
